@@ -6,17 +6,19 @@
 
 ## Anwendung ##
 
+### Seitennavigation ###
+
+Noch nicht implementiert!
+
 ### Artikelnavigation ###
 
 Dieser Inserttag fügt eine Artikelnavigation für die aktuelle Seite ein:
 
 ```php
 {{artikelnavigation}}
-?>
 ```
 Optional kann auch als Parameter die ID der Seite (hier 43) angegeben werden:
 
 ```php
 {{artikelnavigation::43}}
-?>
 ```
