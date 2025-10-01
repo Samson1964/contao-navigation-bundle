@@ -3,12 +3,12 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2014 Leo Feyer
+ * Copyright (c) 2005-2025 Leo Feyer
  *
- * @package   fh-counter
- * @author    Frank Hoppe
+ * @package   ContaoNavigationBundle
+ * @author    Frank Binding
  * @license   GNU/LGPL
- * @copyright Frank Hoppe 2014
+ * @copyright Frank Binding 2025
  */
 
 namespace Schachbulle\ContaoNavigationBundle\Classes;
@@ -27,10 +27,11 @@ class Navigation extends \Frontend
 		// Liefert zur aktuellen bzw. gewünschten (id) Seite eine Artikelnavigation
 		if($arrSplit[0] == 'artikelnavigation' || $arrSplit[0] == 'artikelnavigation_alter')
 		{
+			// ########## FUNKTIONIERT NICHT #############
 			if(!isset($GLOBALS['Navigationszaehler'])) $GLOBALS['Navigationszaehler'] = 1;
 			else $GLOBALS['Navigationszaehler']++;
-			echo '#'.$GLOBALS['Navigationszaehler'];
-			//if($Navigationszaehler > 1) return false;
+			if($GLOBALS['Navigationszaehler'] > 1) return false;
+			// ########## FUNKTIONIERT NICHT #############
 			
 			// Parameter angegeben?
 			if(isset($arrSplit[1]))
