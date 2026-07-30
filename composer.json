@@ -1,7 +1,14 @@
 {
     "name": "schachbulle/contao-navigation-bundle",
     "type": "contao-bundle",
-    "description": "Seiten- und Artikel-Navigation für Contao 4",
+    "description": "Frontend-Module für eine gemeinsame Navigation über Seiten und Artikel.",
+    "keywords": [
+        "contao",
+        "navigation",
+        "seiten",
+        "artikel"
+    ],
+    "homepage": "https://github.com/Samson1964/contao-navigation-bundle",
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
