@@ -1,14 +1,22 @@
 <?php
 
-/**
- * Contao Open Source CMS
+declare(strict_types=1);
+
+/*
+ * Dieses Bundle stellt das Inserttag {{artikelnavigation}} bereit.
  *
- * Copyright (c) 2005-2014 Leo Feyer
- *
- * @package   fh-counter
- * @author    Frank Hoppe
- * @license   GNU/LGPL
- * @copyright Frank Hoppe 2014
+ * @author    Frank Binding
+ * @license   LGPL-3.0-or-later
  */
- 
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('Schachbulle\ContaoNavigationBundle\Classes\Navigation', 'get');
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsInsertTag;
+use Schachbulle\ContaoNavigationBundle\InsertTag\ArtikelnavigationInsertTag;
+
+/*
+ * Ab Contao 5.2 wird das Inserttag über das Attribut AsInsertTag registriert
+ * (siehe services.yaml). Nur ältere Fassungen (Contao 4.13 bis 5.1) benötigen
+ * den dort inzwischen als veraltet markierten Hook "replaceInsertTags".
+ */
+if (!class_exists(AsInsertTag::class)) {
+    $GLOBALS['TL_HOOKS']['replaceInsertTags'][] = [ArtikelnavigationInsertTag::class, 'doReplace'];
+}
