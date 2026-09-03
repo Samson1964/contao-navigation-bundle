@@ -1,13 +1,14 @@
 {
     "name": "schachbulle/contao-navigation-bundle",
     "type": "contao-bundle",
-    "description": "Frontend-Module für eine gemeinsame Navigation über Seiten und Artikel.",
+    "description": "Inserttags für eine Navigation über die Unterseiten einer Seite und über die Artikel einer Seite.",
     "keywords": [
         "contao",
         "navigation",
         "seiten",
         "artikel",
-        "inserttag"
+        "inserttag",
+        "untermenue"
     ],
     "homepage": "https://github.com/Samson1964/contao-navigation-bundle",
     "license": "LGPL-3.0-or-later",

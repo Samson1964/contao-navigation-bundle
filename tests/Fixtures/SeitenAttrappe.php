@@ -12,16 +12,14 @@ declare(strict_types=1);
 
 namespace Schachbulle\ContaoNavigationBundle\Tests\Fixtures;
 
-use Schachbulle\ContaoNavigationBundle\InsertTag\ArtikelnavigationInsertTag;
+use Schachbulle\ContaoNavigationBundle\InsertTag\SeitennavigationInsertTag;
 
 /**
- * Attrappe der Artikelnavigation für die Tests.
+ * Attrappe der Seitennavigation für die Tests.
  *
- * Ersetzt Datenbankzugriff und Template durch eine feste Zeichenkette und zählt
- * mit, wie oft die Navigation tatsächlich aufgebaut wurde. Damit lässt sich die
- * Unterdrückung von Wiederholungen prüfen, ohne einen Contao-Kern zu starten.
+ * Arbeitet wie NavigationsAttrappe, nur für das Inserttag {{seitennavigation}}.
  */
-final class NavigationsAttrappe extends ArtikelnavigationInsertTag
+final class SeitenAttrappe extends SeitennavigationInsertTag
 {
     /**
      * Zählt die Aufrufe von baue(), also die tatsächlich erzeugten Navigationen.
@@ -31,7 +29,7 @@ final class NavigationsAttrappe extends ArtikelnavigationInsertTag
     /**
      * Liefert statt der echten Navigation eine erkennbare Ersatzausgabe.
      *
-     * @param string|null $parameter Die gewünschte Seiten-ID, oder null für die aktuelle Seite
+     * @param string|null $parameter Die ID der Elternseite, oder null für die aktuelle Seite
      *
      * @return string Die Ersatzausgabe, in der der Parameter sichtbar bleibt
      */

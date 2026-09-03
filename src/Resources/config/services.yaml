@@ -2,8 +2,11 @@ services:
     _defaults:
         autoconfigure: true
 
-    # Ab Contao 5.2 registriert das Attribut AsInsertTag den Dienst als Inserttag.
-    # In älteren Fassungen bleibt die Definition ungenutzt; dort greift der Hook
+    # Ab Contao 5.2 registriert das Attribut AsInsertTag die Dienste als Inserttags.
+    # In älteren Fassungen bleiben die Definitionen ungenutzt; dort greift der Hook
     # aus der config.php.
     schachbulle.navigation.insert_tag.artikelnavigation:
         class: Schachbulle\ContaoNavigationBundle\InsertTag\ArtikelnavigationInsertTag
+
+    schachbulle.navigation.insert_tag.seitennavigation:
+        class: Schachbulle\ContaoNavigationBundle\InsertTag\SeitennavigationInsertTag

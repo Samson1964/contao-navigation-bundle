@@ -1,5 +1,12 @@
 # Seiten- und Artikel-Navigation Changelog
 
+## Version 0.3.0 (2026-09-03)
+
+* Add: Das Inserttag `{{seitennavigation}}` listet die Unterseiten der aktuellen bzw. der angegebenen Seite auf. Gefiltert wird wie im Navigationsmodul des Kerns: im Menü versteckte, unveröffentlichte, geschützte und nur für Gäste sichtbare Seiten bleiben draußen
+* Add: Beide Navigationen werden über ein Contao-Template ausgegeben (`navigation_seiten.html5` und `navigation_artikel.html5`), das sich im eigenen `templates/`-Verzeichnis überschreiben lässt
+* Change: Die gemeinsame Anbindung an beide Inserttag-Schnittstellen liegt jetzt in `AbstractNavigationInsertTag`; beide Inserttags teilen sich das Unterdrücken wiederholter Vorkommen
+* Change: `ArtikelnavigationInsertTag::baueNavigation()` ist durch `baueEintraege()` ersetzt; die Methode liefert die Einträge als Feld statt fertiges HTML. Die Ausgabe der Artikelnavigation bleibt dabei zeichengleich zu 0.2.0
+
 ## Version 0.2.0 (2026-09-03)
 
 * Add: Der Seitenparameter (`{{artikelnavigation::43}}`) ist umgesetzt; bisher lieferte er nur die Zeichenkette „OK“

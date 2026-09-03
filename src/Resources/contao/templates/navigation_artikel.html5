@@ -1,0 +1,27 @@
+<?php
+/*
+ * Artikelnavigation des Inserttags {{artikelnavigation}}.
+ *
+ * Verfügbar sind:
+ *
+ *   $this->eintraege  Liste der Einträge, je Eintrag:
+ *                       titel   Titel des Artikels bzw. der Seite
+ *                       url     Adresse des Eintrags
+ *                       aktiv   true beim gerade aufgerufenen Eintrag
+ *                       imPfad  wie aktiv (bei Artikeln gibt es keinen Pfad)
+ *   $this->trenner    Trennzeichen zwischen zwei Einträgen
+ *   $this->seite      PageModel der Seite, um deren Artikel es geht
+ *
+ * Zum Anpassen eine Kopie unter templates/ ablegen und dort ändern.
+ */
+
+$ausgabe = array();
+
+foreach ($this->eintraege as $eintrag)
+{
+	$ausgabe[] = $eintrag['aktiv']
+		? $eintrag['titel']
+		: '<a href="' . $eintrag['url'] . '">' . $eintrag['titel'] . '</a>';
+}
+
+echo implode($this->trenner, $ausgabe);

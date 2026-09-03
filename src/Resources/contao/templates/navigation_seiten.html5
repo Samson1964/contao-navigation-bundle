@@ -1,0 +1,34 @@
+<?php
+/*
+ * Seitennavigation des Inserttags {{seitennavigation}}.
+ *
+ * Verfügbar sind:
+ *
+ *   $this->eintraege  Liste der Einträge, je Eintrag:
+ *                       titel   Titel der Unterseite
+ *                       url     Adresse der Unterseite
+ *                       aktiv   true bei der gerade aufgerufenen Seite
+ *                       imPfad  true, wenn die Seite im Pfad zur aktuellen
+ *                               Seite liegt (bleibt ein Verweis)
+ *   $this->trenner    Trennzeichen zwischen zwei Einträgen
+ *   $this->seite      PageModel der Elternseite
+ *
+ * Zum Anpassen eine Kopie unter templates/ ablegen und dort ändern.
+ */
+
+$ausgabe = array();
+
+foreach ($this->eintraege as $eintrag)
+{
+	if ($eintrag['aktiv'])
+	{
+		$ausgabe[] = $eintrag['titel'];
+
+		continue;
+	}
+
+	$klasse = $eintrag['imPfad'] ? ' class="trail"' : '';
+	$ausgabe[] = '<a href="' . $eintrag['url'] . '"' . $klasse . '>' . $eintrag['titel'] . '</a>';
+}
+
+echo implode($this->trenner, $ausgabe);
